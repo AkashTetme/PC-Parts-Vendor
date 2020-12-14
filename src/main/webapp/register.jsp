@@ -21,6 +21,8 @@
 
 <div class="col-md-4 offset-md-4">
 
+<%@include file="bsComponents/messege.jsp" %>
+
 <div class="card text-white bg-dark mb-3">
 
 <div class="card-body px-8 ">
