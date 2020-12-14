@@ -13,6 +13,9 @@
 </head>
 <body>
 
+<!-- Navbar  Components -->
+<%@include file="bsComponents/navbar.jsp" %>
+
 <h1>creating sessionF object singleton</h1>
 
 <% 

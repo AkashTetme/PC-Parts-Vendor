@@ -11,5 +11,7 @@
 </head>
 <body>
 
+<%@include file="bsComponents/navbar.jsp" %>
+
 </body>
 </html>
