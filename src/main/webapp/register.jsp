@@ -27,33 +27,33 @@
 
 <img src="IMAGES/profile.png" class="text-center" style="height: 100px">
 
-<form >
+<form action="RegisterServlet" method="post">
 
 <h3 class="text-center my-3">Sign-up here</h3>
 
   <div class="form-group">
     <label for="name">User name</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter Here">
+    <input name="user_name" type="text" class="form-control" id="name" placeholder="Enter Here">
   </div>
   
   <div class="form-group">
     <label for="email">User Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter Here">
+    <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter Here">
   </div>
 
 	<div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Enter Here">
+    <input name="user_password" type="password" class="form-control" id="password" placeholder="Enter Here">
   </div>
   
   <div class="form-group">
     <label for="phone">Phone</label>
-    <input type="number" class="form-control" id="phone" placeholder="Enter Here">
+    <input  name="user_phone" type="number" class="form-control" id="phone" placeholder="Enter Here">
   </div>
   
   <div class="form-group">
     <label for="address">Address</label>
-    <textarea style="height: 200px" class="form-control" id="address" placeholder="Enter Address Here"></textarea>
+    <textarea name="user_address" style="height: 200px" class="form-control" id="address" placeholder="Enter Address Here"></textarea>
   </div>
   
   <div class="container text-center">
