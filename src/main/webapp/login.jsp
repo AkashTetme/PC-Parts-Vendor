@@ -30,6 +30,9 @@
 					</div>
 
 					<div class="card-body">
+					
+					<!-- custom messege -->
+					<%@include file="bsComponents/messege.jsp"%>
 
 						<form action="LoginServlet" method="post">
 							<div class="form-group">

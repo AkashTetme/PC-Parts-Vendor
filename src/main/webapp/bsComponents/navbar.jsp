@@ -47,3 +47,11 @@
   </div>
   
 </nav>
+
+<!-- <style>
+body {
+  background-image: url('IMAGES/PCZ.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style> -->
