@@ -1,22 +1,26 @@
+
 <%
 
-String messege = (String) session.getAttribute("messege");
+	String messege = (String) session.getAttribute("messege");
 
-if(messege != null){
-	
+	if (messege != null) {
 %>
 
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong><%= messege %></strong>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+		<div class="alert alert-success alert-dismissible fade show"
+			role="alert">
+			<strong><%=messege%></strong>
+			<button 
+				type="button" 
+				class="close" 
+				data-dismiss="alert"
+				aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		</div>
 
 <%
-	
-	session.removeAttribute("messege");
-	
-}
 
+	session.removeAttribute("messege");
+}
+	
 %>

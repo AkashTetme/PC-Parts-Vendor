@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 public class User {
@@ -15,6 +16,7 @@ public class User {
 	
 	@Column(length = 150, name = "user_name")
 	private String userName;
+	
 	
 	@Column(length = 150, name = "user_email")
 	private String userEmail;
