@@ -1,3 +1,10 @@
+<%@page import="com.akash.entities.User"%>
+<%
+
+User user1 =(User) session.getAttribute("current-user");
+
+%>
+
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg-navbar">
   
   <div class="container">
@@ -32,13 +39,39 @@
     
     <ul class="navbar-nav ml-auto">
     
-    <li class="nav-item">
+    <%
+    
+    	if(user1 == null){
+    		
+    %>
+    
+   	<li class="nav-item">
         <a class="nav-link" href="login.jsp">Login</a>
     </li>
     
     <li class="nav-item">
         <a class="nav-link" href="register.jsp">Register</a>
     </li>
+    
+    <%
+    			
+    	}else{
+    		
+    	    %>
+    	    
+    	   	<li class="nav-item">
+    	        <a class="nav-link" href="#!"><%= user1.getUserName() %></a>
+    	    </li>
+    	    
+    	    <li class="nav-item">
+    	        <a class="nav-link" href="LogoutServlet">Log-Out</a>
+    	    </li>
+    	    
+    	    <%
+    		
+    	}
+    
+    %>
     
     </ul>
     

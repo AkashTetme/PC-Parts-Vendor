@@ -1,3 +1,29 @@
+<%@page import="com.akash.entities.User"%>
+<%
+
+	User user =(User) session.getAttribute("current-user");
+
+	if(user == null){
+		
+		session.setAttribute("messege", "Login First");
+		response.sendRedirect("login.jsp");
+		return;
+		
+	}else{
+		
+		if(user.getUserType().equals("NORMAL")){
+			session.setAttribute("messege", "!! Access Denied !!");
+			response.sendRedirect("login.jsp");
+			return;
+			
+		}
+		
+	}
+
+%>
+
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -5,8 +31,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin Page</title>
+<!-- Common Bootsrap Components -->
+<%@include file="bsComponents/common_js_css.jsp"%>
 </head>
 <body>
-<h3>Admin</h3>
+
+	<!-- Navbar  Components -->
+	<%@include file="bsComponents/navbar.jsp"%>
+
+	<h3>Admin Page</h3>
+
 </body>
 </html>
