@@ -1,3 +1,11 @@
 .custom-bg-navbar{
-	background: #b71c1c !important;
+	background: #b71c1c;
+}
+
+.custom-bg-card .card{
+	border: 1px solid red;
+}
+
+.custom-bg-card .card:hover{
+	cursor: pointer;
 }
