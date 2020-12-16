@@ -9,3 +9,8 @@
 .custom-bg-card .card:hover{
 	cursor: pointer;
 }
+
+.list-group-item.active {
+	background: #b71c1c;
+	border-color: #b71c1c;
+}
