@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.akash.hibFact.factoryProvider"%>
+<%@page import="com.akash.DAO.categoryDao"%>
+<%@page import="com.akash.entities.Catagory"%>
 <%@page import="com.akash.entities.User"%>
 <%
 	User user = (User) session.getAttribute("current-user");
@@ -38,6 +42,13 @@ if (user == null) {
 	<%@include file="bsComponents/navbar.jsp"%>
 
 	<div class="container custom-bg-card">
+	
+	<div class="container-fluid mt-3">
+	
+	<!-- custom messege -->
+	<%@include file="bsComponents/messege.jsp"%>
+	
+	</div>
 	
 		<!-- First Row  -->
 		<div class="row mt-3 ">
@@ -181,8 +192,11 @@ if (user == null) {
       </div>
       <div class="modal-body">
         
-		<form action="">
+		<form action="ProductOpServlet" method="post">
 		
+		<input type="hidden" name="operation" value="addCategory">
+		
+			<!-- Category Title -->
 			<div class="form-group">
 			
 			<input 
@@ -195,6 +209,7 @@ if (user == null) {
 			
 			</div>
 			
+			<!-- Category Description -->
 			<div class="form-group">
 			
 			<textarea
@@ -240,8 +255,11 @@ if (user == null) {
       </div>
       <div class="modal-body">
         
-		<form action="">
+		<form action="ProductOpServlet" method="post" enctype="multipart/form-data">
 		
+		<input type="hidden" name="operation" value="addProduct">
+		
+			<!-- Product name -->
 			<div class="form-group">
 			
 			<input 
@@ -254,6 +272,7 @@ if (user == null) {
 			
 			</div>
 			
+			<!-- Product Description -->
 			<div class="form-group">
 			
 			<textarea
@@ -266,6 +285,7 @@ if (user == null) {
 			
 			</div>
 			
+			<!-- Product Price -->
 			<div class="form-group">
 			
 			<input 
@@ -278,18 +298,20 @@ if (user == null) {
 			
 			</div>
 			
+			<!-- Product Discount -->
 			<div class="form-group">
 			
 			<input 
 				type="number" 
 				class="form-control"
-				name="prodDesc"
-				placeholder="Product Descount"
+				name="prodDisc"
+				placeholder="Product Discount"
 				required="required"
 				/>
 			
 			</div>
 			
+			<!-- Product Quantity -->
 			<div class="form-group">
 			
 			<input 
@@ -302,10 +324,37 @@ if (user == null) {
 			
 			</div>
 			
+			<!-- Product Category -->
+			
+			<%
+				
+				categoryDao catD = new categoryDao(factoryProvider.getFactory());
+				List<Catagory> cList= catD.getCategories();
+			
+			%>
+			
 			<div class="form-group">
 			
+			<select name="catId" class="form-control">
+			
+			<% for(Catagory c : cList ){ %>
+				
+				<option value=<%= c.getCategoryId() %>><%= c.getCategoryName() %></option>
+			
+			<% } %>
+			</select>
+			
+			</div>
+			
+			
+			<!-- Product Image -->
+			<div class="form-group">
+			
+			<label for="pPic">Select Picture Of Product</label>
+			
 			<input 
-				type="image" 
+				type="file" 
+				id="pPic"
 				class="form-control"
 				name="prodPic"
 				placeholder="Product Pic"

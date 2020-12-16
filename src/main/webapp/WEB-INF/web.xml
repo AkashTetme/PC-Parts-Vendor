@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.akash.servlets.LogoutServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ProductOpServlet</servlet-name>
+  	<display-name>ProductOpServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.akash.servlets.ProductOpServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegisterServlet</servlet-name>
   	<url-pattern>/RegisterServlet</url-pattern>
@@ -33,6 +39,10 @@
   <servlet-mapping>
   	<servlet-name>LogoutServlet</servlet-name>
   	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductOpServlet</servlet-name>
+  	<url-pattern>/ProductOpServlet</url-pattern>
   </servlet-mapping>
  
 </web-app>

@@ -25,7 +25,7 @@ public class Product {
 	
 	private int productDiscount;
 	
-	private String productQuantity;
+	private int productQuantity;
 	
 	@ManyToOne
 	private Catagory catagory;
@@ -35,7 +35,7 @@ public class Product {
 	}
 
 	public Product(String productName, String productDesc, String productPic, int productPrice, int productDiscount,
-			String productQuantity) {
+			int productQuantity) {
 		super();
 		this.productName = productName;
 		this.productDesc = productDesc;
@@ -46,7 +46,7 @@ public class Product {
 	}
 
 	public Product(String productName, String productDesc, String productPic, int productPrice, int productDiscount,
-			String productQuantity, Catagory catagory) {
+			int productQuantity, Catagory catagory) {
 		super();
 		this.productName = productName;
 		this.productDesc = productDesc;
@@ -58,7 +58,7 @@ public class Product {
 	}
 
 	public Product(int productId, String productName, String productDesc, String productPic, int productPrice,
-			int productDiscount, String productQuantity) {
+			int productDiscount, int productQuantity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -117,11 +117,11 @@ public class Product {
 		this.productDiscount = productDiscount;
 	}
 
-	public String getProductQuantity() {
+	public int getProductQuantity() {
 		return productQuantity;
 	}
 
-	public void setProductQuantity(String productQuantity) {
+	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
 

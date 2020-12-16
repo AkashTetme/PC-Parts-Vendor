@@ -62,7 +62,7 @@
 							
 							<div class="container text-center">
 							
-								<button type="submit" class="btn btn-primary border-0 custom-bg-navbar">Submit</button>
+								<button type="submit" class="btn btn-primary border-0 custom-bg-navbar">Login</button>
 								
 								<button type="reset" class="btn btn-warning ">Reset</button>
 							
