@@ -135,5 +135,8 @@
 	
 	</div>
 </div>
+
+<!-- Common modals Components -->
+<%@include file="bsComponents/common_modal.jsp"%>
 </body>
 </html>

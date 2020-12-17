@@ -47,4 +47,78 @@ function add_to_cart(pid, pname, pprice) {
 		
 	}
 	
+	updateCart();
+	
 }
+
+function updateCart() {
+	
+	let cartString = localStorage.getItem("cart");
+	
+	let cart = JSON.parse(cartString);
+	
+	if(cart == null || cart.length == 0){
+		console.log("Cart Empty");
+		$(".cart-item").html("(0)");
+		$(".cart-body").html("<h3> Cart does not have any item </h3>");
+		$(".checkout-btn").addClass('disabled');
+		
+	}else{
+		
+		console.log(cart);
+		$(".cart-item").html(`(${cart.length})`);
+		
+		let table = `
+		
+		<table class = 'table'>
+		<thead class = 'thead-light'
+		
+		<tr>
+		
+		<th>Name</th>
+		<th>Price(1)</th>
+		<th>Quantity</th>
+		<th>Price(*n)</th>
+		<th>Action</th>
+		
+		</tr>
+		
+		</thead>
+		
+		`;
+		
+		let totalPrice = 0;
+		
+		cart.map((item)=>{
+			
+			table +=
+				`
+				<tr>
+					<td> ${item.productName} </td>
+					<td> ${item.productPrice} </td>
+					<td> ${item.productQuantity} </td>
+					<td> ${item.productQuantity*item.productPrice} </td>
+					<td> <button class="btn btn-danger btn-sm">Remove </button></td>
+				</tr>
+				
+				`
+				totalPrice += item.productQuantity*item.productPrice;
+				
+		} )
+		
+		
+		
+		table = table+`
+		
+		<td> <button class="btn btn-success btn-sm text-right">Total: ${totalPrice}</button></td>
+		
+		</table>`
+		
+		$(".cart-body").html(table);
+		
+	}
+}
+
+$(document) .ready(function () {
+	updateCart();
+})

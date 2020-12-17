@@ -39,6 +39,10 @@ User user1 =(User) session.getAttribute("current-user");
     
     <ul class="navbar-nav ml-auto">
     
+    <li class="nav-item">
+        <a class="nav-link" href="#!" data-toggle="modal" data-target="#cart"><i class="fa fa-cart-plus" style="font-size: 20px;"></i><span class="cart-item">(0)</span></a>
+    </li>
+    
     <%
     
     	if(user1 == null){
