@@ -14,3 +14,12 @@
 	background: #b71c1c;
 	border-color: #b71c1c;
 }
+
+.discount-label{
+	font-size: 10px;
+	font-style: italic;
+}
+
+.product-card:hover{
+	cursor: pointer;
+}

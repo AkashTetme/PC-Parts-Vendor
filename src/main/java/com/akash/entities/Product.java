@@ -140,5 +140,13 @@ public class Product {
 				+ ", productPic=" + productPic + ", productPrice=" + productPrice + ", productDiscount="
 				+ productDiscount + ", productQuantity=" + productQuantity + ", catagory=" + catagory + "]";
 	}
+	
+	// price after discount
+	public int getDiscPrice() {
+		
+		int dis = (int) ((this.getProductDiscount()/100.0)*this.getProductPrice());
+		
+		return this.getProductPrice() - dis;
+	}
 
 }

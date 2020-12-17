@@ -88,7 +88,8 @@
 						for(Product p : plist)	{
 					%>
 						
-						<div class="card bg-dark text-white">
+						<!-- product card -->
+						<div class="card bg-dark text-white product-card">
 						
 						<div class="container text-center">
 							<img class="card-img-top m-2" src="IMAGES/Products/<%= p.getProductPic() %>" 
@@ -104,10 +105,13 @@
 								
 							</div>
 							
-							<div class="card-footer">
+							<div class="card-footer text-center">
 							
-							<button class="btn custom-bg-navbar text-white">Add to Cart</button>
-							<button class="btn btn-warning "> &#8377 <%= p.getProductPrice() %></button>
+							<button class="btn btn-warning text-white" onclick="add_to_cart(<%= p.getProductId() %>, '<%= p.getProductName() %>', <%= p.getDiscPrice() %>)">Add to Cart</button>
+							<button class="btn btn-success ">
+							 &#8377 <%= p.getDiscPrice() %>/- 
+							 <span class="text-dark discount-label">
+							 <%= p.getProductPrice() %> ,<%= p.getProductDiscount() %>% off</span></button>
 							
 							</div>
 						
