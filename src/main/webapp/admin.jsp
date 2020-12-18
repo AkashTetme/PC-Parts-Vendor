@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="com.akash.hibFact.descWrapper"%>
 <%@page import="java.util.List"%>
 <%@page import="com.akash.hibFact.factoryProvider"%>
 <%@page import="com.akash.DAO.categoryDao"%>
@@ -24,6 +26,13 @@ if (user == null) {
 }
 %>
 
+			<%
+				
+				categoryDao catD = new categoryDao(factoryProvider.getFactory());
+				List<Catagory> cList= catD.getCategories();
+			
+				Map<String, Long> m = descWrapper.getCounts(factoryProvider.getFactory());
+			%>
 
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -66,7 +75,7 @@ if (user == null) {
 			
 			</div>
 			
-			<h1 class="text-info">256</h1>
+			<h1 class="text-info"><%=m.get("userCount") %></h1>
 			
 			<h1 class="text-uppercase text-muted">Users</h1> 
 			
@@ -89,7 +98,7 @@ if (user == null) {
 			
 			</div>
 			
-			<h1 class="text-info">256</h1>
+			<h1 class="text-info"><%= cList.size() %></h1>
 			
 			<h1 class="text-uppercase text-muted">Categories</h1> 
 			
@@ -112,7 +121,7 @@ if (user == null) {
 			
 			</div>
 			
-			<h1 class="text-info">256</h1>
+			<h1 class="text-info"><%= m.get("productCount") %></h1>
 			
 			<h1 class="text-uppercase text-muted">Products</h1> 
 			
@@ -326,12 +335,7 @@ if (user == null) {
 			
 			<!-- Product Category -->
 			
-			<%
-				
-				categoryDao catD = new categoryDao(factoryProvider.getFactory());
-				List<Catagory> cList= catD.getCategories();
-			
-			%>
+
 			
 			<div class="form-group">
 			
@@ -382,6 +386,9 @@ if (user == null) {
 </div>
 
 <!-- end Add product model -->
+
+<!-- Common modals Components -->
+<%@include file="bsComponents/common_modal.jsp"%>
 
 </body>
 </html>

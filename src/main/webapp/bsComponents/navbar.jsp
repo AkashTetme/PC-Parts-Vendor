@@ -64,7 +64,7 @@ User user1 =(User) session.getAttribute("current-user");
     	    %>
     	    
     	   	<li class="nav-item">
-    	        <a class="nav-link" href="#!"><%= user1.getUserName() %></a>
+    	        <a class="nav-link" href="<%= user1.getUserType().equals("admin")?"admin.jsp":"normal.jsp" %>"><%= user1.getUserName() %></a>
     	    </li>
     	    
     	    <li class="nav-item">

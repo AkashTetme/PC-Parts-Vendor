@@ -61,7 +61,7 @@ function updateCart() {
 		console.log("Cart Empty");
 		$(".cart-item").html("(0)");
 		$(".cart-body").html("<h3> Cart does not have any item </h3>");
-		$(".checkout-btn").addClass('disabled');
+		$(".checkout-btn").attr("disabled", true);
 		
 	}else{
 		
@@ -98,7 +98,7 @@ function updateCart() {
 					<td> ${item.productPrice} </td>
 					<td> ${item.productQuantity} </td>
 					<td> ${item.productQuantity*item.productPrice} </td>
-					<td> <button class="btn btn-danger btn-sm">Remove </button></td>
+					<td> <button onclick = "deleteItem(${item.productId})" class="btn btn-danger btn-sm">Remove </button></td>
 				</tr>
 				
 				`
@@ -116,9 +116,26 @@ function updateCart() {
 		
 		$(".cart-body").html(table);
 		
+		$(".checkout-btn").attr("disabled", false);
 	}
+}
+
+function deleteItem(pid) {
+	
+	let cart = JSON.parse(localStorage.getItem("cart"));
+	
+	let newcart = cart.filter((item) => item.productId != pid)
+	
+	localStorage.setItem("cart", JSON.stringify(newcart));
+	
+	updateCart();
 }
 
 $(document) .ready(function () {
 	updateCart();
 })
+
+function goToCheckout() {
+	
+	window.location = "checkout.jsp"
+}
