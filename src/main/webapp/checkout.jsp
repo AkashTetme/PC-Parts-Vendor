@@ -93,7 +93,7 @@ if (user == null) {
 
 </div>
 
-<button class="btn btn-primary">Continue Shopping</button>
+<a href = "index.jsp" class="btn btn-primary">Continue Shopping</a>
 
 </div>
 

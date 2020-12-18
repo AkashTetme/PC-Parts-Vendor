@@ -60,7 +60,7 @@ if (user == null) {
 	</div>
 	
 		<!-- First Row  -->
-		<div class="row mt-3 ">
+		<div class="row mt-3 md-5">
 		
 		<!-- First Column  -->
 		<div class="col-md-4">

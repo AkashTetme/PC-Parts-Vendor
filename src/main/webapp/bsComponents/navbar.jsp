@@ -24,14 +24,13 @@ User user1 =(User) session.getAttribute("current-user");
       
       
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Contact Dev
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-warning" href="#">9004700782</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item text-info" href="mailto: tetme.akasht@gmail.com">tetme.akasht@gmail.com</a>
         </div>
       </li>
       
@@ -85,10 +84,10 @@ User user1 =(User) session.getAttribute("current-user");
   
 </nav>
 
-<!-- <style>
+<style>
 body {
   background-image: url('IMAGES/PCZ.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
-</style> -->
+</style>

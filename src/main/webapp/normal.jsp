@@ -37,8 +37,33 @@
 
 	<!-- Navbar  Components -->
 	<%@include file="bsComponents/navbar.jsp"%>
+	
+	
+	<div class="container">
+	
+	
+		<!-- First Row  -->
+	<div class="row mt-3 md-5">
+		
+		<div class="card bg-dark">
+		  <h5 class="card-header text-white">Hello <%= user.getUserName() %></h5>
+		  <div class="card-body">
+		    <h5 class="card-title text-white">Hope you like our E-Commerce web-site.</h5>
+		    <p class="card-text text-white">This project is built on using Java and Servlets for back-end And JSP, Bootstrap 4
+		    including HTML, CSS, JS for front-end technologies.</p>
+		    <br>
+		    <p class="card-text text-info"> For Project Details, Click on below button</p>
+		    <a href = "mailto: tetme.akasht@gmail.com" class="btn btn-primary">tetme.akasht@gmail.com</a>
+		  </div>
+		</div>
 
-	<h3>Normal User Page</h3>
+	</div>
+	
+	</div>
+	
+	
+<!-- Common modals Components -->
+<%@include file="bsComponents/common_modal.jsp"%>
 	
 </body>
 </html>
